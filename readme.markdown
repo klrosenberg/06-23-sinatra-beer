@@ -35,5 +35,5 @@ Each beer is categorized by a specific beer type and a specific brewery. Many be
 - At least three models
     - At least one one-to-many relationship
     - At least one many-to-many relationship
--Unit tests for all business logic
--Ability to fully interact with the application from the browser
+- Unit tests for all business logic
+- Ability to fully interact with the application from the browser
