@@ -18,6 +18,20 @@ class BeerType
     @name = options['name']
   end
   
+  # Check to see if new BeerType has a unique name.
+  #
+  # name = String
+  #
+  # Returns Boolean depending if name is included in type_names Array.
+  def self.unique?(name)
+    type_names = []
+    BeerType.all.each do |x|
+      type_names << x.name
+    end
+    !type_names.include?("#{name}")
+  end
+    
+  
   # Updates beer type in database.
   #
   # Returns Boolean.

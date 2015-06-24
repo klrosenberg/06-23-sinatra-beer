@@ -13,6 +13,7 @@ module DatabaseInstanceMethods
     else
       return false
     end
+  end
     
   # Deletes an entry from the database.
   def delete
