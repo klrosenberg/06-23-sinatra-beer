@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Beer Rating Archive</title>
+</head>
+<body>
+  <h2><center>If you would like to update the table, please select the beer type.</center></h2> 
+  <form action="/beer_types/update_beer_type"><center>
+    <table style="width:25%">
+      <tr>
+        <th>Beer Type</th>
+      </tr>
+      <tr>
+    <% BeerType.all.each do |type| %>
+        <td><input type="radio" name="id" value="<%= type.id %>"><%= type.name%></td>
+      </tr>
+    <% end %>
+  </table>
+    <p><center><input type="submit"></center></p>
+  </center></form> 
+  <center><a href="/home">Main Menu</a></center>
+<body>
+</html>

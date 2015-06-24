@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Beer Rating Archive</title>
+</head>
+<body>
+  <% if @error %>
+    <p><center>Beer type has not been removed from the database.</center></p>
+    <p><center>Please reassign beers to a new category, then try again.</center</p>
+  <% else%>
+    <p><center>Beer type has been successfully removed the database.</center></p>
+  <% end %>
+  <center><a href="/home">Main Menu</a></center>
+</body>
+</html>
