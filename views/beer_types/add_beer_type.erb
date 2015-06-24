@@ -3,8 +3,11 @@
     <title>Beer Rating Archive</title>
   </head>
   <body>
-    <% if @error %>
+    <% if @error1 %>
     <p>Beer type was not saved. Beer types may only be added once.</p>
+    <% end %>
+    <% if @error2 %>
+    <p>Please enter the beer type name in the field.</p>
     <% end %>
     <h3><center>Please enter the name of the new beer</center></h3>
     <form action="/save_beer_type"><center>

@@ -2,12 +2,15 @@
 # Add beer type to table
 # -----------------------------------------------------------------------------
 get "/save_beer_type" do
-  if BeerType.unique?(params['name'])
+  if BeerType.include(params['name']) 
+    @error1 = true
+    erb :"beer_types/add_beer_type" 
+  elsif BeerType.empty(params['name'])
+    @error2 = true
+    erb :"beer_types/add_beer_type"
+  else
     BeerType.add({"name" => params['name']})
     erb :"beer_types/added_beer_type"
-  else
-    @error = true
-    erb :"beer_types/add_beer_type" 
   end
 end
 
