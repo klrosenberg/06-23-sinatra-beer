@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Beer Rating Archive</title>
+  </head>
+  <body>
+    <% if @error1 %>
+    <p>Beer was not saved. Beers may only be added once.</p>
+    <% end %>
+    <% if @error2 %>
+    <p>Please enter the name of the beer in the field.</p>
+    <% end %>
+    <h3><center>Please enter the name of the new beer.</center></h3>
+    <form action="/save_beer"><center>
+      <p>Beer name</p>
+      <p><input type="text" placeholder="New beer" name="name"></p>
+      <p>ABV%</p>
+      <p><input type="text" placeholder="ABV" name="abv"></p>
+      <p>Beer Type</p>
+      <p><select name="beer_type_id" value="">
+        <option >--------</option>
+        <% BeerType.all.each do |type| %>
+        <option value="<%= type.id %>"><%= type.name %></option>
+        <% end %>
+      </select></p>
+      <p>Brewery</p>
+      <p><select name="brewery_id" value="">
+        <option>--------</option>
+        <% Brewery.all.each do |brewery| %>
+        <option value="<%= brewery.id %>"><%= brewery.name %></option>
+        <% end %>
+      </select></p>
+      <input type="submit">
+    </center></form>
+    <center><a href="/home">Main Menu</a></center>
+  </body>
+<html>

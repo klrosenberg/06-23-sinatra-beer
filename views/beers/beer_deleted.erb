@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Beer Rating Archive</title>
+</head>
+<body>
+  <% if @error %>
+    <p><center>Beer has not been removed from the database.</center></p>
+    <p><center>Please remove any user ratings of this beer, then try again.</center</p>
+  <% else%>
+    <p><center>Beer has been successfully removed the database.</center></p>
+  <% end %>
+  <center><a href="/home">Main Menu</a></center>
+</body>
+</html>

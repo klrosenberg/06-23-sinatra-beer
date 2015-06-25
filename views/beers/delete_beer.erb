@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Beer Rating Archive</title>
+</head>
+<body>
+  <h2><center>Select the beer to be deleted.</center></h2> 
+  <form action="/beer_deleted"><center>
+    <table style="width:25%">
+      <tr>
+        <th>Beer</th>
+      </tr>
+      <tr>
+    <% Beer.all.each do |beer| %>
+        <td><input type="radio" name="id" value="<%= beer.id %>"><%= beer.name%></td>
+      </tr>
+    <% end %>
+  </table>
+    <p><center><input type="submit"></center></p>
+  </center></form> 
+  <center><a href="/home">Main Menu</a></center>
+<body>
+</html>

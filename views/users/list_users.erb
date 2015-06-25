@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Beer Rating Archive</title>
+</head>
+<body>
+  <h2><center>If you would like to update the table, please select the user.</center></h2> 
+  <form action="/users/update_user"><center>
+    <table style="width:25%">
+      <tr>
+        <th>Users</th>
+      </tr>
+      <tr>
+    <% User.all.each do |user| %>
+        <td><input type="radio" name="id" value="<%= user.id %>"><%= user.name%></td>
+      </tr>
+    <% end %>
+  </table>
+    <p><center><input type="submit"></center></p>
+  </center></form> 
+  <center><a href="/home">Main Menu</a></center>
+<body>
+</html>

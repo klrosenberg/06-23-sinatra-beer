@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Beer Rating Archive</title>
+  </head>
+  <body>
+    <% if @error1 %>
+    <p>Brewery was not saved. Breweries may only be added once.</p>
+    <% end %>
+    <% if @error2 %>
+    <p>Please enter the brewery name in the field.</p>
+    <% end %>
+    <h3><center>Please enter the name of the new brewery.</center></h3>
+    <form action="/save_brewery"><center>
+      <input type="text" placeholder="New brewery" name="name">
+      <input type="submit">
+    </center></form>
+    <center><a href="/home">Main Menu</a></center>
+  </body>
+<html>

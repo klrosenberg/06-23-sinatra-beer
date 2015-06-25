@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Beer Rating Archive</title>
+</head>
+<body>
+  <h2><center>Please change the name and submit.</center></h2>
+  <form action="/update_beer/save"><center>
+    <input type="hidden" name="id" value="<%= @beer.id %>">
+    <p><input type="text" placeholder="Beer" name="name" value="<%= @beer.name %>"></p>
+    <p><input type="text" placeholder="ABV" name="abv" value="<%= @beer.abv %>"></p>
+    <p><select name="type_id">>
+      <% BeerType.all.each do |type| %>
+      <option value="<%= type.id %>" <%="selected" if type.id == @beer.type_id%>><%= type.name %></option>
+      <% end %>
+    </select></p>
+    <p><select name="brewery_id">>
+      <% Brewery.all.each do |brewery| %>
+      <option value="<%= brewer.id %>" <%="selected" if brewery.id == @beer.brewery_id%>><%= brewery.name %></option>
+      <% end %>
+    </select></p>
+    <p><center><input type="submit"></center></p>
+  </center><form>
+  <center><a href="/home">Main Menu</a></center>
+</body>
+</html>
