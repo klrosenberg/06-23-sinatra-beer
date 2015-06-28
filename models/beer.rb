@@ -6,7 +6,7 @@ class Beer
   include DatabaseInstanceMethods
 
   attr_reader :id, :rating
-  attr_accessor :name, :abv, :type_id, :brewery_id,
+  attr_accessor :name, :abv, :type_id, :brewery_id
 
   # Instantaites a new instance of the Beer Class.
   # 
@@ -22,6 +22,10 @@ class Beer
     @rating = options['rating'].to_i
   end
   
+  def self.chart
+    DATABASE.execute("SELECT beers.name AS beer, beers.abv AS abv, beer_types.name AS style, breweries.name AS brewery FROM beers JOIN beer_types ON beers.beer_type_id = beer_types.id JOIN breweries ON beers.brewery_id = breweries.id;")
+  end
+
   # Check to make sure a name is entered for beer type.
   #
   # beer - Hash within params.

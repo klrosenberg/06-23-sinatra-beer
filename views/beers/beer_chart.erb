@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Beer Rating Archive</title>
+</head>
+<body>
+  <h1>
+    <center>
+      Beer Chart
+    </center>
+  </h1>
+  <center>
+  <table style="width:50%">
+    <tr>
+      <th>Beer</th>
+      <th>ABV(%)</th>
+      <th>Style</th>
+      <th>Brewery</th>
+    </tr>
+    <% @beers.each do |beer| %>
+    <tr>
+      <td><%= beer['beer'] %></td>
+      <td><%= beer['abv'] %>
+      <td><%= beer['style'] %></td>
+      <td><%= beer['brewery'] %></td>
+    </tr>
+  <% end %>
+  </table>
+  </center>
+</body>
+</html>

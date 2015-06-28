@@ -14,9 +14,19 @@ get "/save_beer" do
   end
 end
 
+# -----------------------------------------------------------------------------
+# List beers in a table.
+# -----------------------------------------------------------------------------
+get "/beers/beer_chart" do
+  @beers = Beer.chart
+  erb :"/beers/beer_chart"
+end
+
+# -----------------------------------------------------------------------------
+# Update beer by id.
+# -----------------------------------------------------------------------------
 get "/beers/update_beer" do
   @beer = Beer.find(params["id"].to_i)
-  binding.pry
   erb :"/beers/update_beer"
 end
 
