@@ -22,6 +22,9 @@ class Beer
     @rating = options['rating'].to_i
   end
   
+  # Join beer types and breweries tables to beers table.
+  #
+  # Returns an Array of Hashes.
   def self.chart
     DATABASE.execute("SELECT beers.name AS beer, beers.abv AS abv, beer_types.name AS style, breweries.name AS brewery FROM beers JOIN beer_types ON beers.beer_type_id = beer_types.id JOIN breweries ON beers.brewery_id = breweries.id;")
   end
