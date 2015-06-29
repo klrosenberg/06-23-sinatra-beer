@@ -1,9 +1,8 @@
 # -----------------------------------------------------------------------------
 # Add rating to table.
 # -----------------------------------------------------------------------------
-get "ratings/beer_rated" do
-   binding.pry
-  if Rating.empty(params['abv'].to_i)
+get "/ratings/beer_rated" do
+  if Rating.empty(params['abv'])
     @error = true
     erb :"ratings/add_beer_rating"
   else

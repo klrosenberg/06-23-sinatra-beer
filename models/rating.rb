@@ -25,8 +25,8 @@ class Rating
   # abv - Integer within params.
   #
   # Returns Boolean.
-  def self.empty(abv)
-    if abv.empty?
+  def self.empty(rating)
+    if rating.empty?
       true
     else
       false
