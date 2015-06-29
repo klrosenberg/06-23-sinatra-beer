@@ -6,7 +6,7 @@ class Beer
   include DatabaseInstanceMethods
 
   attr_reader :id, :rating
-  attr_accessor :name, :abv, :type_id, :brewery_id
+  attr_accessor :name, :abv, :beer_type_id, :brewery_id
 
   # Instantaites a new instance of the Beer Class.
   # 
@@ -26,7 +26,7 @@ class Beer
   #
   # Returns an Array of Hashes.
   def self.chart
-    DATABASE.execute("SELECT beers.name AS beer, beers.abv AS abv, beer_types.name AS style, breweries.name AS brewery FROM beers JOIN beer_types ON beers.beer_type_id = beer_types.id JOIN breweries ON beers.brewery_id = breweries.id;")
+    DATABASE.execute("SELECT beers.name AS beer, beers.abv AS abv, beer_types.name AS style, breweries.name AS brewery FROM beers JOIN beer_types ON beers.beer_type_id = beer_types.id JOIN breweries ON beers.brewery_id = breweries.id ORDER BY beers.name COLLATE NOCASE;")
   end
 
   # Check to make sure a name is entered for beer type.
@@ -61,7 +61,7 @@ class Beer
   # Returns Boolean.
   def save
     if
-      DATABASE.execute("UPDATE beers SET name = '#{@name}', abv = #{@abv}, type_id = #{@type_id}, brewery = #{@brewery_id} WHERE id = #{id};")
+      DATABASE.execute("UPDATE beers SET name = '#{@name}', abv = #{@abv}, beer_type_id = #{@beer_type_id}, brewery_id = #{@brewery_id} WHERE id = #{id};")
       return true
     else
       return false

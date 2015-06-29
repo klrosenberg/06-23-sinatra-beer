@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Beer Rating Archive</title>
+</head>
+<body>
+  <h2><center>Please select the user to check history of beer ratings.</center></h2>
+  <form action="/ratings/list_user_history"><center>
+    <p>User</p>
+    <p><select name="user_id" value="">
+      <option >--------</option>
+      <% User.all.each do |user| %>
+      <option value="<%= user.id %>"><%= user.name %></option>
+      <% end %>
+    </select></p>
+    <input type="submit">
+  </center></form>
+  <center><a href="/home">Main Menu</a></center>
+</body>
+<html>

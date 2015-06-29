@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Beer Rating Archive</title>
+</head>
+<body>
+  <h2><center><%= @user.name %>'s History</center></h2>
+  <form action="/ratings/list_user_history"><center>
+    <table style="width:25%">
+      <tr>
+        <th>Beer</th>
+        <th>Rating</th>
+      </tr>
+      <tr>
+        <% @user_history.each do |history| %>
+        <td><%= history['beer'] %></td>
+        <td><%= history['rating'] %></td>
+      </tr>
+        <% end %>
+  </table>
+    <p><center><input type="submit"></center></p>
+    </center></form> 
+    <center><a href="/home">Main Menu</a></center>
+</body>
+<html>

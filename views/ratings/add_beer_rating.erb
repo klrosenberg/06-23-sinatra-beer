@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Beer Rating Archive</title>
+</head>
+<body>
+  <% if @error %>
+  <p>Rating was not saved. Please enter a value for each field.</p>
+  <% end %>
+  <h2><center>Please enter your rating out of 100.</center></h2>
+  <form action="/ratings/beer_rated"><center>
+    <p>User</p>
+    <p><select name="user_id" value="">
+      <option >--------</option>
+      <% User.all.each do |user| %>
+      <option value="<%= user.id %>"><%= user.name %></option>
+      <% end %>
+    </select></p>
+    <p>Beer</p>
+    <p><select name="beer_id" value="">
+      <option >--------</option>
+      <% Beer.all.each do |beer| %>
+      <option value="<%= beer.id %>"><%= beer.name %></option>
+      <% end %>
+    </select></p>
+    <p>Rating (out of 100)</p>
+    <p><input type="text" placeholder="Rating" name="rating"></p>
+    <p><center><input type="submit"></center></p>
+  </center><form>
+  <center><a href="/home">Main Menu</a></center
+</body>
+</html>
