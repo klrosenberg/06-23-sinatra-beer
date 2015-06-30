@@ -4,13 +4,13 @@
 get "/save_beer" do
   if Beer.include(params['name']) 
     @error1 = true
-    erb :"beers/add_beer" 
+    erb :"/beers/add_beer" 
   elsif Beer.empty(params['name'])
     @error2 = true
-    erb :"beers/add_beer"
+    erb :"/beers/add_beer"
   else
     Beer.add({"name" => params['name'], "abv" => params['abv'].to_f, "beer_type_id" => params['beer_type_id'].to_i, "brewery_id" => params['brewery_id'].to_i})
-    erb :"beers/added_beer"
+    erb :"/beers/added_beer"
   end
 end
 
@@ -36,14 +36,14 @@ end
 get "/update_beer/save" do
   @beer = Beer.find(params['id'].to_i)
   @beer.name = params["name"]
-  @beer.abv = params["abv"].to_f
-  @beer.beer_type_id = params["beer_type_id"].to_i
-  @beer.brewery_id = params["brewery_id"].to_i
+  @beer.abv = params["abv"]
+  @beer.beer_type_id = params["beer_type_id"]
+  @beer.brewery_id = params["brewery_id"]
   if @beer.save
-    erb :"beers/beer_updated"
+    erb :"/beers/beer_updated"
   else
     @error = true
-    erb :"beers/update_beer"
+    erb :"/beers/update_beer"
   end
 end
 
@@ -52,13 +52,21 @@ end
 # -----------------------------------------------------------------------------
 get "/beer_deleted" do
   @beer = Beer.find(params['id'].to_i)
-  if @beer.delete
-    erb :"beers/beer_deleted"
-  else
+  if Rating.where("beer_id", params['id']).length > 0
     @error = true
-    erb :"beers/update_beer"
+    erb :"/beers/delete_beer"
+  else @beer.delete
+    erb :"/beers/beer_deleted"
   end
 end
+
+#   if @beer.delete
+#     erb :"/beers/beer_deleted"
+#   else
+#     @error = true
+#     erb :"/beers/update_beer"
+#   end
+# end
 
 # -----------------------------------------------------------------------------
 # Returns erb associated with.

@@ -38,13 +38,14 @@ end
 # -----------------------------------------------------------------------------
 get "/brewery_deleted" do
   @brewery = Brewery.find(params['id'].to_i)
-  if @brewery.delete
-    erb :"breweries/brewery_deleted"
-  else
+  if Beer.where("brewery_id", params['id']).length > 0
     @error = true
-    erb :"breweries/update_brewery"
+    erb :"/breweries/delete_brewery"
+  else @brewery.delete
+    erb :"/breweries/brewery_deleted"
   end
 end
+
 
 # -----------------------------------------------------------------------------
 # Returns erb associated with.

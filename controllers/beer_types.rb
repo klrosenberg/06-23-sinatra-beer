@@ -15,7 +15,7 @@ get "/save_beer_type" do
 end
 
 get "/beer_types/update_beer_type" do
-  @beer_type = BeerType.find(params["id"].to_i)
+  @beer_type = BeerType.find(params["id"])
   erb :"/beer_types/update_beer_type"
 end
 
@@ -23,7 +23,7 @@ end
 # Beer type name updated.
 # -----------------------------------------------------------------------------
 get "/update_beer_type/save" do
-  @beer_type = BeerType.find(params['id'].to_i)
+  @beer_type = BeerType.find(params['id'])
   @beer_type.name = params["name"]
   if @beer_type.save
     erb :"beer_types/beer_type_updated"
@@ -37,14 +37,22 @@ end
 # Beer type deleted.
 # -----------------------------------------------------------------------------
 get "/beer_type_deleted" do
-  @beer_type = BeerType.find(params['id'].to_i)
-  if @beer_type.delete
-    erb :"beer_types/beer_type_deleted"
-  else
+  @beer_type = BeerType.find(params['id'])
+  if Beer.where("beer_type_id", params['id']).length > 0
     @error = true
-    erb :"beer_types/update_beer_type"
+    erb :"/beer_types/delete_beer_type"
+  else @beer_type.delete
+    erb :"/beer_types/beer_type_deleted"
   end
 end
+
+#   if @beer_type.delete
+#     erb :"beer_types/beer_type_deleted"
+#   else
+#     @error = true
+#     erb :"beer_types/update_beer_type"
+#   end
+# end
 
 # -----------------------------------------------------------------------------
 # Returns erb associated with.

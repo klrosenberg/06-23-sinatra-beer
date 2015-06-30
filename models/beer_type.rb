@@ -22,11 +22,7 @@ class BeerType
   #
   # Returns Boolean.
   def self.empty(name)
-    if name.empty?
-      true
-    else
-      false
-    end
+    return true if name.empty?
   end
   
   # Check to see if new BeerType has a unique name.
@@ -43,15 +39,10 @@ class BeerType
   end
     
   
-  # Updates beer type in database.
-  #
-  # Returns Boolean.
-  def save
-    if
-      DATABASE.execute("UPDATE beer_types SET name = '#{@name}' WHERE id = #{id};")
-      return true
-    else
-      return false
-    end
-  end
+  # # Updates beer type in database.
+  # #
+  # # Returns Boolean.
+  # def save
+  #   return true if DATABASE.execute("UPDATE beer_types SET name = '#{@name}' WHERE id = #{id};")
+  # end
 end

@@ -15,31 +15,25 @@ class Rating
   # Returns new object of the Rating Class.
   def initialize(options = {})
     @id = options['id'].to_i
-    @user_id = options['user_id'].to_i
-    @beer_id = options['beer_id'].to_i
-    @rating = options['rating'].to_i
+    @user_id = options['user_id']
+    @beer_id = options['beer_id']
+    @rating = options['rating']
   end
   
-  # Check to make sure a number is entered for abv.
-  #
-  # abv - Integer within params.
-  #
-  # Returns Boolean.
+  # # Check to make sure a number is entered for abv.
+  # #
+  # # abv - Integer within params.
+  # #
+  # # Returns Boolean.
   def self.empty(rating)
-    if rating.empty?
-      true
-    else
-      false
-    end
+    return true if rating.empty?
   end
   
-  # Find ratings from user id.
+  # Join beers and users tables to ratings table.
   #
-  # Return a new instance of the Rating Class.
-  def self.find(user_id)
-    table_name = self.to_s.tableize
-    results = DATABASE.execute("SELECT * FROM #{table_name} WHERE user_id = #{id};").first
-    self.new(results)
+  # Returns an Array of Hashes.
+  def self.chart
+    DATABASE.execute("SELECT ratings.id, users.name AS user, beers.name AS beer, ratings.rating FROM ratings JOIN beers on ratings.beer_id = beers.id JOIN users on ratings.user_id = users.id ORDER BY users.name COLLATE NOCASE;")
   end
   
   # Find list of ratings attributed to one user.

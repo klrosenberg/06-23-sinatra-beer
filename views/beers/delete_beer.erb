@@ -4,6 +4,9 @@
   <title>Beer Rating Archive</title>
 </head>
 <body>
+  <% if @error %>
+  <p>Beer cannot be deleted if a user has rated it.</p>
+  <% end %>
   <h2><center>Select the beer to be deleted.</center></h2> 
   <form action="/beer_deleted"><center>
     <table style="width:25%">

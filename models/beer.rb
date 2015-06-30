@@ -16,10 +16,10 @@ class Beer
   def initialize(options = {})
     @id = options['id']
     @name = options['name']
-    @abv = options['abv'].to_f
-    @beer_type_id = options['beer_type_id'].to_i
-    @brewery_id = options['brewery_id'].to_i
-    @rating = options['rating'].to_i
+    @abv = options['abv']
+    @beer_type_id = options['beer_type_id']
+    @brewery_id = options['brewery_id']
+    @rating = options['rating']
   end
   
   # Join beer types and breweries tables to beers table.
@@ -35,11 +35,7 @@ class Beer
   #
   # Returns Boolean.
   def self.empty(name)
-    if name.empty?
-      true
-    else
-      false
-    end
+    return true if name.empty?
   end
   
   # Check to see if new Beer has a unique name.
@@ -60,11 +56,6 @@ class Beer
   #
   # Returns Boolean.
   def save
-    if
-      DATABASE.execute("UPDATE beers SET name = '#{@name}', abv = #{@abv}, beer_type_id = #{@beer_type_id}, brewery_id = #{@brewery_id} WHERE id = #{id};")
-      return true
-    else
-      return false
-    end
+    return true if DATABASE.execute("UPDATE beers SET name = '#{@name}', abv = #{@abv}, beer_type_id = #{@beer_type_id}, brewery_id = #{@brewery_id} WHERE id = #{id};") 
   end
 end

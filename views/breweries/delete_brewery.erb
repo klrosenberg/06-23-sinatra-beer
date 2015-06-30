@@ -4,6 +4,9 @@
   <title>Beer Rating Archive</title>
 </head>
 <body>
+  <% if @error %>
+  <p>Cannot delete brewery that is currently assigned to a beer.</p>
+  <% end %>
   <h2><center>Select the brewery to be deleted.</center></h2> 
   <form action="/brewery_deleted"><center>
     <table style="width:25%">

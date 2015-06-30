@@ -3,8 +3,17 @@ require "active_support/inflector"
 
 module DatabaseClassMethods
   
+  # Defines table name from Class.
+  #
+  # Returns string of table name.
+  def table_name
+    self.to_s.tableize
+  end
+  
+  # Selects all from a specific table.
+  #
+  # Returns an Array of objects.
   def all
-    table_name = self.to_s.tableize
     results = DATABASE.execute("SELECT * FROM #{table_name}")
     store_results = []
     results.each do |hash|
@@ -13,12 +22,22 @@ module DatabaseClassMethods
     return store_results
   end
   
+  # Finds a specific row from the table.
+  #
+  # id - Integer
+  #
+  # Returns a new instance of the Class.
   def find(id)
     table_name = self.to_s.tableize
     results = DATABASE.execute("SELECT * FROM #{table_name} WHERE id = #{id};").first
     self.new(results)
   end
   
+  # Adds a new row to a specified table.
+  #
+  # options = {} - 
+  #
+  # Returns a new instance of the Class.
   def add(options = {})
     columns = options.keys
     values = options.values
@@ -39,6 +58,12 @@ module DatabaseClassMethods
     self.new(options)
   end
   
+  # Selects all rows from a specified table that share the same value of a specific column.
+  #
+  # column - String that identifies column header.
+  # id - Integer that identifies a certain value of the column.
+  #
+  # Returns an Array of objects.
   def where(column_name, id)
      table_name = self.to_s.pluralize.underscore
      column_name = 
