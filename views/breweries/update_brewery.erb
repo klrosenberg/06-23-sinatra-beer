@@ -4,12 +4,12 @@
   <title>Beer Rating Archive</title>
 </head>
 <body>
-  <h2><center>Please change the name and submit.</center></h2>
-  <form action="/update_brewery/save"><center>
+  <h2>Please change the name and submit.</h2>
+  <form action="/update_brewery/save">
     <input type="hidden" name="id" value="<%= @brewery.id %>">
     <p><input type="text" placeholder="Beer Type" name="name" value="<%= @brewery.name %>"></p>
-    <p><center><input type="submit"></center></p>
-  </center><form>
-  <center><a href="/home">Main Menu</a></center>
+    <p><input type="submit"></p>
+    <form>
+  <a href="/home">Main Menu</a>
 </body>
 </html>

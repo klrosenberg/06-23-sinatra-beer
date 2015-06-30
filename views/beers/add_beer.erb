@@ -9,9 +9,9 @@
     <% if @error2 %>
     <p>Please enter a value in each field.</p>
     <% end %>
-    <h3><center>Please enter the name of the new beer.</center></h3>
-    <form action="/save_beer"><center>
-      <p>Beer name</p>
+    <h2>Please enter the name of the new beer.</h2>
+    <form action="/save_beer">
+      <h2>Beer name</h2>
       <p><input type="text" placeholder="New beer" name="name"></p>
       <p>ABV%</p>
       <p><input type="text" placeholder="ABV" name="abv"></p>
@@ -30,7 +30,7 @@
         <% end %>
       </select></p>
       <input type="submit">
-    </center></form>
-    <center><a href="/home">Main Menu</a></center>
+    </form>
+  <a href="/home">Main Menu</a>
   </body>
 <html>

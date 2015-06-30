@@ -4,8 +4,8 @@
   <title>Beer Rating Archive</title>
 </head>
 <body>
-  <h2><center>Please change the name and submit.</center></h2>
-  <form action="/update_beer/save"><center>
+  <h2>Please change the name and submit.</h2>
+  <form action="/update_beer/save">
     <input type="hidden" name="id" value="<%= @beer.id %>">
     <p><input type="text" placeholder="Beer" name="name" value="<%= @beer.name %>"></p>
     <p><input type="text" placeholder="ABV" name="abv" value="<%= @beer.abv %>"></p>
@@ -19,8 +19,8 @@
       <option value="<%= brewery.id %>" <%="selected" if brewery.id == @beer.brewery_id%>><%= brewery.name %></option>
       <% end %>
     </select></p>
-    <p><center><input type="submit"></center></p>
-  </center><form>
-  <center><a href="/home">Main Menu</a></center>
+    <p><input type="submit"></p>
+    <form>
+  <a href="/home">Main Menu</a>
 </body>
 </html>

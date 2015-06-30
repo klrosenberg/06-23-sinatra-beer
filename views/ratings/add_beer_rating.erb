@@ -7,8 +7,8 @@
   <% if @error %>
   <p>Rating was not saved. Please enter a value for each field.</p>
   <% end %>
-  <h2><center>Please enter your rating out of 100.</center></h2>
-  <form action="/ratings/beer_rated"><center>
+  <h2>Please enter your rating out of 100.</h2>
+  <form action="/ratings/beer_rated">
     <p>User</p>
     <p><select name="user_id" value="">
       <option >--------</option>
@@ -25,8 +25,8 @@
     </select></p>
     <p>Rating (out of 100)</p>
     <p><input type="text" placeholder="Rating" name="rating"></p>
-    <p><center><input type="submit"></center></p>
-  </center><form>
-  <center><a href="/home">Main Menu</a></center
+    <p><input type="submit"></p>
+    <form>
+  <a href="/home">Main Menu</a>
 </body>
 </html>
