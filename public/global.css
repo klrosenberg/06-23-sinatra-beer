@@ -124,6 +124,9 @@ div p a{
     width: 20%;
     min-width: 100px;
     float:left;
+    border: none;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
   }
   a{
     display: block;
