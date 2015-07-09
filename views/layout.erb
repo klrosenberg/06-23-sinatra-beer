@@ -3,9 +3,27 @@
   <head>
     <title>Beer Rating Archive</title>
     <link rel="stylesheet" href="/global.css">
+    <script type="text/javascript" src="global.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>  
   </head>
 
     <%= yield %>
+    
+    <div id="responsive_menu">
+      <div>   
+        <p>
+          <a href="#" onclick="overlay()">x</a>
+        </p>
+        <ul>
+          <li><a href="/beers/sub_menu_beer">Beers</a></li>
+          <li><a href="/beer_types/sub_menu_beer_type">Beer Types</a></li>
+          <li><a href="/breweries/sub_menu_brewery">Breweries</a></li>
+          <li><a href="/users/sub_menu_user">Users</a></li>
+          <li><a href="/ratings/sub_menu_rating">Ratings</a></li>
+          <li><a href="/home">Main Menu</a></li>
+        </ul>
+      </div>
+    </div>
+    
 
 </html>
