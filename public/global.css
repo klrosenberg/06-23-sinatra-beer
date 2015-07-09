@@ -1,34 +1,77 @@
 html{
   box-sizing: border_box;
+  background-color: rgb(247, 246, 246);
+  font-family: 'Ubuntu Condensed', sans-serif;
 }
 
 *, *:before, *:after{
   box-sizing: inherit;
 }
+
 h1{
   margin: 0;
-  padding: 0;
-  text-align: center;
+  font-size: 40px;
+  line-height: 10px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: rgb(162, 119, 176);
 }
 
 h2{
   margin: 0;
-  padding: 0;
+  font-size: 40px;
+  line-height: 10px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: rgb(162, 119, 176);
+}
+
+body{
   text-align: center;
+  min-width: 370px;
+  margin: 0;
 }
 
 ul{
-  list-style-type: none;
   margin: 0;
+  list-style-type: none;
   padding: 0;
-  text-align: center;
 }
 
 li{
   border: 1px solid black;
-  line-height: 3;
+  line-height: 40px;
+  cursor: pointer;
 }
 
-link{
-  cursor: pointer;
+a:link{
+  text-decoration: none;
+}
+
+a:hover{
+  color: white;
+}
+
+li:hover{
+  background-color: grey;
+}
+
+@media (min-width: 400px){
+  li{
+    float: left;
+  }
+  a{
+    display: block;
+    min-width: 200px;
+  }
+}
+
+@media (min-width: 600px){
+  li{
+    float:left;
+  }
+  a{
+    display: block;
+    min-width: 100px;
+  }
 }
