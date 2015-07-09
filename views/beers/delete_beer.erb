@@ -4,12 +4,16 @@
   <title>Beer Rating Archive</title>
 </head>
 <body>
+  <h2>Delete Beer</h2>
+  <h3>
+    <a href="#" onclick="overlay()" class="menu_icon">☰</a>
+  </h3>
   <% if @error %>
   <p>Beer cannot be deleted if a user has rated it.</p>
   <% end %>
-  <h2>Select the beer to be deleted.</h2> 
+  <h4>Select the beer to be deleted.</h4> 
   <form action="/beer_deleted">
-    <table style="width:25%">
+    <table>
       <tr>
         <th>Beer</th>
       </tr>
@@ -21,6 +25,5 @@
   </table>
     <p><input type="submit"></p>
   </form> 
-  <a href="/home">Main Menu</a>
 <body>
 </html>

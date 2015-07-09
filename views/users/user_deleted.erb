@@ -4,11 +4,14 @@
   <title>Beer Rating Archive</title>
 </head>
 <body>
+  <h2>Delete User</h2>
+  <h3>
+    <a href="#" onclick="overlay()" class="menu_icon">☰</a>
+  </h3>
   <% if @error %>
-    <p><center>User has not been removed from the database.</center></p>
+    <p>User has not been removed from the database.</p>
   <% else%>
-    <p><center>User has been successfully removed the database.</center></p>
+    <p>User has been successfully removed the database.</p>
   <% end %>
-  <center><a href="/home">Main Menu</a></center>
 </body>
 </html>

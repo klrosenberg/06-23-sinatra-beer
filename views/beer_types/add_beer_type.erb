@@ -3,17 +3,20 @@
     <title>Beer Rating Archive</title>
   </head>
   <body>
+    <h2>Add Beer Type</h2>
+    <h3>
+      <a href="#" onclick="overlay()" class="menu_icon">☰</a>
+    </h3>
     <% if @error1 %>
     <p>Beer type was not saved. Beer types may only be added once.</p>
     <% end %>
     <% if @error2 %>
     <p>Please enter the beer type name in the field.</p>
     <% end %>
-    <h2>Please enter the name of the new type of beer.</h2>
+    <h4>Please enter the name of the new type of beer.</h4>
     <form action="/save_beer_type">
       <input type="text" placeholder="New beer type" name="name">
       <input type="submit">
     </form>
-    <a href="/home">Main Menu</a>
   </body>
 <html>

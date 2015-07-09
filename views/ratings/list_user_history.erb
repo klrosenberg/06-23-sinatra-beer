@@ -4,9 +4,13 @@
   <title>Beer Rating Archive</title>
 </head>
 <body>
-  <h2><%= @user.name %>'s History</h2>
+  <h2>User's History</h2>
+  <h3>
+    <a href="#" onclick="overlay()" class="menu_icon">☰</a>
+  </h3>
+  <h4><%= @user.name %>'s History</h4>
   <form action="/ratings/list_user_history">
-    <table style="width:25%">
+    <table>
       <tr>
         <th>Beer</th>
         <th>Rating</th>
@@ -20,6 +24,5 @@
   </table>
     <p><input type="submit"></p>
   </form> 
-  <a href="/home">Main Menu</a>
 </body>
 <html>

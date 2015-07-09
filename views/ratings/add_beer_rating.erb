@@ -4,10 +4,14 @@
   <title>Beer Rating Archive</title>
 </head>
 <body>
+  <h2>Add Rating</h2>
+  <h3>
+    <a href="#" onclick="overlay()" class="menu_icon">☰</a>
+  </h3>
   <% if @error %>
   <p>Rating was not saved. Please enter a value for each field.</p>
   <% end %>
-  <h2>Please enter your rating out of 100.</h2>
+  <h4>Please enter your rating out of 100.</h4>
   <form action="/ratings/beer_rated">
     <p>User</p>
     <p><select name="user_id" value="">
@@ -27,6 +31,5 @@
     <p><input type="text" placeholder="Rating" name="rating"></p>
     <p><input type="submit"></p>
     <form>
-  <a href="/home">Main Menu</a>
 </body>
 </html>

@@ -3,17 +3,20 @@
     <title>Beer Rating Archive</title>
   </head>
   <body>
+    <h2>Add User</h2>
+    <h3>
+      <a href="#" onclick="overlay()" class="menu_icon">☰</a>
+    </h3>
     <% if @error1 %>
     <p>User was not saved. Users may only be added once.</p>
     <% end %>
     <% if @error2 %>
     <p>Please enter the user name in the field.</p>
     <% end %>
-    <h3><center>Please enter the name of the new user.</center></h3>
-    <form action="/save_user"><center>
+    <h4>Please enter the name of the new user.</h4>
+    <form action="/save_user">
       <input type="text" placeholder="New user" name="name">
       <input type="submit">
-    </center></form>
-    <center><a href="/home">Main Menu</a></center>
+    </form>
   </body>
 <html>

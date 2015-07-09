@@ -3,15 +3,21 @@
     <title>Beer Rating Archive</title>
   </head>
   <body>
+    <h2>
+      Add Beer
+    </h2>
+    <h3>
+      <a href="#" onclick="overlay()" class="menu_icon">☰</a>
+    </h3>
     <% if @error1 %>
     <p>Beer was not saved. Beers may only be added once.</p>
     <% end %>
     <% if @error2 %>
     <p>Please enter a value in each field.</p>
     <% end %>
-    <h2>Please enter the name of the new beer.</h2>
+    <h4>Please enter the name of the new beer.</h4>
     <form action="/save_beer">
-      <h2>Beer name</h2>
+      <p>Beer name</p>
       <p><input type="text" placeholder="New beer" name="name"></p>
       <p>ABV%</p>
       <p><input type="text" placeholder="ABV" name="abv"></p>
@@ -31,6 +37,5 @@
       </select></p>
       <input type="submit">
     </form>
-  <a href="/home">Main Menu</a>
   </body>
 <html>

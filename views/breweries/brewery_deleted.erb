@@ -4,12 +4,15 @@
   <title>Beer Rating Archive</title>
 </head>
 <body>
+  <h2>Brewery Deleted</h2>
+  <h3>
+    <a href="#" onclick="overlay()" class="menu_icon">☰</a>
+  </h3>
   <% if @error %>
     <h2>Brewery has not been removed from the database.</h2>
     <h2>Please reassign beers to a new brewery, then try again.</h2>
   <% else%>
     <h2>Brewery has been successfully removed the database.</h2>
   <% end %>
-  <a href="/home">Main Menu</a>
 </body>
 </html>

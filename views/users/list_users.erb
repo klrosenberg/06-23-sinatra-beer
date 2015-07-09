@@ -4,8 +4,12 @@
   <title>Beer Rating Archive</title>
 </head>
 <body>
-  <h2><center>If you would like to update the table, please select the user.</center></h2> 
-  <form action="/users/update_user"><center>
+  <h2>List Users</h2>
+  <h3>
+    <a href="#" onclick="overlay()" class="menu_icon">☰</a>
+  </h3>
+  <h4>If you would like to update the table, please select the user.</h4> 
+  <form action="/users/update_user">
     <table style="width:25%">
       <tr>
         <th>Users</th>
@@ -16,8 +20,7 @@
       </tr>
     <% end %>
   </table>
-    <p><center><input type="submit"></center></p>
-  </center></form> 
-  <center><a href="/home">Main Menu</a></center>
+    <p><input type="submit"></p>
+  </form> 
 <body>
 </html>

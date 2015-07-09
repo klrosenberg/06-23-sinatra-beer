@@ -4,12 +4,15 @@
   <title>Beer Rating Archive</title>
 </head>
 <body>
-  <h2><center>Please change the name and submit.</center></h2>
-  <form action="/update_user/save"><center>
+  <h2>Update User</h2>
+  <h3>
+    <a href="#" onclick="overlay()" class="menu_icon">☰</a>
+  </h3>
+  <h4>Please change the name and submit.</h4>
+  <form action="/update_user/save">
     <input type="hidden" name="id" value="<%= @user.id %>">
     <p><input type="text" placeholder="User" name="name" value="<%= @user.name %>"></p>
-    <p><center><input type="submit"></center></p>
-  </center><form>
-  <center><a href="/home">Main Menu</a></center>
+    <p><input type="submit"></p>
+    <form>
 </body>
 </html>

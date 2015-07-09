@@ -4,8 +4,12 @@
   <title>Beer Rating Archive</title>
 </head>
 <body>
-  <h2><center>Select the user to be deleted.</center></h2> 
-  <form action="/user_deleted"><center>
+  <h2>Delete User</h2>
+  <h3>
+    <a href="#" onclick="overlay()" class="menu_icon">☰</a>
+  </h3>
+  <h4>Select the user to be deleted.</h4> 
+  <form action="/user_deleted">
     <table style="width:25%">
       <tr>
         <th>User</th>
@@ -16,8 +20,7 @@
       </tr>
     <% end %>
   </table>
-    <p><center><input type="submit"></center></p>
-  </center></form> 
-  <center><a href="/home">Main Menu</a></center>
+    <p><input type="submit"></p>
+  </form> 
 <body>
 </html>

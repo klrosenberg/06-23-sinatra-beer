@@ -71,6 +71,17 @@ li:hover{
   background-color: grey;
 }
 
+/* CSS style for tables */
+table{
+  border-collapse: collapse;
+  margin: auto;
+  margin-top: 15px;
+  padding: 10px;
+}
+
+table, th, td {
+   border: 2px solid black;
+}
 
 /* CSS style for hidden hamburger menu*/
 #responsive_menu{
@@ -108,22 +119,9 @@ div p a{
 }
 
 /* Media queries for floats */
-@media (min-width: 400px){
-  ul{
-    min-width: 100%;
-  }
+@media (min-width: 500px){
   li{
-    min-width: 50%;
-    float: left;
-  }
-  a{
-    display: block;
-  }
-}
-
-@media (min-width: 600px){
-  li{
-    width: 16.67%;
+    width: 20%;
     min-width: 100px;
     float:left;
   }

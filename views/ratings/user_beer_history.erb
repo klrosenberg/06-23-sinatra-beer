@@ -4,7 +4,11 @@
   <title>Beer Rating Archive</title>
 </head>
 <body>
-  <h2>Please select the user to check history of beer ratings.</h2>
+  <h2>User's History</h2>
+  <h3>
+    <a href="#" onclick="overlay()" class="menu_icon">☰</a>
+  </h3>
+  <h4>Please select the user to check history of beer ratings.</h4>
   <form action="/ratings/list_user_history">
     <p>User</p>
     <p><select name="user_id" value="">
@@ -15,6 +19,5 @@
     </select></p>
     <input type="submit">
   </form>
-  <a href="/home">Main Menu</a>
 </body>
 <html>
