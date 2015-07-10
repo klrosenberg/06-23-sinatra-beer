@@ -10,6 +10,7 @@ html{
 }
 
 /* CSS style for Beer Inventory Archive header */
+/* TODO Change all headings to h1 to clean up CSS */
 h1{
   margin: 0;
   font-size: 40px;
@@ -54,12 +55,13 @@ ul{
 }
 
 li{
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   line-height: 40px;
   cursor: pointer;
 }
 
 a:link{
+  display: block;
   text-decoration: none;
 }
 
@@ -120,15 +122,24 @@ div p a{
 
 /* Media queries for floats */
 @media (min-width: 500px){
-  li{
+  .five li{
     width: 20%;
     min-width: 100px;
     float:left;
-    border: none;
-    border-top: 1px solid black;
     border-bottom: 1px solid black;
   }
-  a{
-    display: block;
+
+  .four li{
+    width: 25%;
+    min-width: 100px;
+    float:left;
+    border-bottom: 1px solid black;
+  }
+
+  .three li{
+    width: 33.33%;
+    min-width: 100px;
+    float:left;
+    border-bottom: 1px solid black;
   }
 }
