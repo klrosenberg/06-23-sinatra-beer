@@ -39,6 +39,16 @@ class User
     end
     type_names.include?("#{name}")
   end
+  
+  # Find user by email
+  #
+  # email - String of user email
+  #
+  # Return user object.
+  def self.find_by_email(email)
+    results = DATABASE.execute("SELECT * FROM users WHERE email = '#{email}';")
+    self.new(results)
+  end
     
   
   # # Updates user in database.

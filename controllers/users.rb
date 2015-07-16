@@ -17,6 +17,19 @@ end
 # -----------------------------------------------------------------------------
 # 
 # -----------------------------------------------------------------------------
+get "/authorize" do
+  @user = User.find_by_email(params["email"])
+  if @user.password === params["password"]
+    session[:user_id] = @user.id
+  else
+    @error
+    erb :"/users/login"
+  end
+end
+
+# -----------------------------------------------------------------------------
+# 
+# -----------------------------------------------------------------------------
 get "/users/update_user" do
   @user = User.find(params["id"].to_i)
   erb :"/users/update_user"

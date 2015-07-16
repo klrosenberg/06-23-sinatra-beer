@@ -1,16 +1,16 @@
 
-    <h2>User Sign Up</h2>
-    <h3>
-      <a href="#" onclick="overlay()" class="menu_icon">☰</a>
-    </h3>
-    <% if @error1 %>
-    <p>Please enter the correct email password combination.</p>
-    <% end %>
-    <h4>Login</h4>
-    <form action="/authorize">
-      <p>Email</p>
-      <input type="text" placeholder="User email" name="email">
-      <p>Password</p>
-      <input type="text" placeholder="Password" name="password">
-      <p><input type="submit"></p>
-    </form>
+<h2>User Sign Up</h2>
+<h3>
+  <a href="#" onclick="overlay()" class="menu_icon">☰</a>
+</h3>
+<% if @error %>
+<p>Please enter the correct email password combination.</p>
+<% end %>
+<h4>Login</h4>
+<form action="/authorize">
+  <p>Email</p>
+  <input type="text" placeholder="User email" name="email">
+  <p>Password</p>
+  <input type="text" placeholder="Password" name="password">
+  <p><input type="submit"></p>
+</form>
