@@ -15,7 +15,9 @@ class User
   # Returns new object of the Brewery Class.
   def initialize(options = {})
     @id = options['id']
+    @email = options['email']
     @name = options['name']
+    @password = options['password']
   end
   
   # Check to make sure a name is entered for user.

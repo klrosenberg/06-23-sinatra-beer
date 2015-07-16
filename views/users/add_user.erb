@@ -3,7 +3,7 @@
     <title>Beer Rating Archive</title>
   </head>
   <body>
-    <h2>Add User</h2>
+    <h2>User Sign Up</h2>
     <h3>
       <a href="#" onclick="overlay()" class="menu_icon">☰</a>
     </h3>
@@ -11,12 +11,17 @@
     <p>User was not saved. Users may only be added once.</p>
     <% end %>
     <% if @error2 %>
-    <p>Please enter the user name in the field.</p>
+    <p>Please enter the user information in the fields.</p>
     <% end %>
-    <h4>Please enter the name of the new user.</h4>
+    <h4>Please enter the information of the new user.</h4>
     <form action="/save_user">
-      <input type="text" placeholder="New user" name="name">
-      <input type="submit">
+      <p>Email (this will be your username)</p>
+      <input type="text" placeholder="User email" name="email">
+      <p>Name</p>
+      <input type="text" placeholder="User name" name="name">
+      <p>Password</p>
+      <input type="text" placeholder="Password" name="password">
+      <p><input type="submit"></p>
     </form>
   </body>
 <html>

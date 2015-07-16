@@ -9,7 +9,7 @@ get "/save_user" do
     @error2 = true
     erb :"/users/add_user"
   else
-    User.add({"name" => params['name']})
+    User.add({"email" => params['email'], "name" => params['name'], "password" => params['password']})
     erb :"/users/added_user"
   end
 end
