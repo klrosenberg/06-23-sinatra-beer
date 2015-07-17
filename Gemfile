@@ -5,6 +5,7 @@ source "https://rubygems.org" do
   gem 'sinatra-contrib'
   gem 'bcrypt', '3.1.10'
   gem 'sqlite3', '1.3.10'
+  gem 'activesupport', '4.2.3'
 end
 
 ruby '2.2.2'

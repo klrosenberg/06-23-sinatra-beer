@@ -1,7 +1,12 @@
+require 'rubygems'
+require 'bundler/setup'
+
 require "pry"
 require "sinatra"
 require "sinatra/reloader"
 require "bcrypt"
+require "active_support"
+require "active_support/inflector"
 
 set :sessions, true
 
