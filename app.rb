@@ -10,10 +10,12 @@ require "active_support/inflector"
 require "active_record"
 
 configure :development do
+  require "sqlite3"
   ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: 'beerarchive.db')
 end
 
 configure :production do  
+  require "pg"
   db = URI.parse(ENV['DATABASE_URL'])
 
   ActiveRecord::Base.establish_connection(
@@ -28,8 +30,7 @@ end
 
 set :sessions, true
 
-# SQL/Database
-require "sqlite3"
+# Database
 require_relative "database_setup.rb"
 
 # Models
